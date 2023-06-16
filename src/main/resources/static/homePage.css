@@ -1,0 +1,10 @@
+body {
+	background-color: rgb(255, 219, 225);
+}
+
+#loginCard{
+	height:40vh;
+	width:15vw;
+	background-color: rgb(183, 239, 152);
+}
+
