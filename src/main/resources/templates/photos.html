@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>HomePage</title>
+<title>Photos</title>
 <link rel="stylesheet"
 	th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
 </head>
@@ -21,31 +21,27 @@
 				<a class="btn btn-dark" th:href="@{/logout}">Logout</a>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-3 card m-2">
-				<div class="card-body">
-					<h5 class="card-title">Photos</h5>
-					<p class="card-text">Take a peek</p>
-					<a th:href="@{/photos}" class="btn btn-primary">View</a>
-				</div>
-			</div>
-			
-			<div class="col-3 card m-2">
-				<div class="card-body">
-					<h5 class="card-title">Music</h5>
-					<p class="card-text">Dj</p>
-					<a th:href="@{/music}" class="btn btn-primary">View</a>
-				</div>
-			</div>
-			
-			<div class="col-3 card m-2">
-				<div class="card-body">
-					<h5 class="card-title">TODO</h5>
-					<p class="card-text">Checklist</p>
-					<a th:href="@{/checklist}" class="btn btn-primary">View</a>
-				</div>
-			</div>
 
+		<h1>Photos</h1>
+		<div class = "d-flex flex-row flex-wrap ">
+			<img class="m-2" style="width:300px; height:200px;" th:each="photo : ${photos}" th:src="@{'/photoss/' + ${photo.id}}" alt="Photo">
+		</div>
+
+			
+		
+		<div class="row">
+			<div class = "col-2">
+				<div class="card">
+					<div class="card-body">
+						<div >
+							<form th:action = "@{/addPhoto}" method="post" enctype="multipart/form-data" class = "d-flex justify-content-center align-items-center">
+								<input type="file" name="image" accept="image/*">
+								<button>+</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</div>
