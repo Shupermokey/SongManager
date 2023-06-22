@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>HomePage</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<div class="container">
+		<div
+			class="row mt-3 text-center border border-dark justify-content-center align-items-center">
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/}">Home</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/}">Middle</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/logout}">Logout</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 card m-2">
+				<div class="card-body">
+					<h5 class="card-title">Photos</h5>
+					<p class="card-text">Take a peek</p>
+					<a th:href="@{/photos}" class="btn btn-primary">View</a>
+				</div>
+			</div>
+			
+			<div class="col-3 card m-2">
+				<div class="card-body">
+					<h5 class="card-title">Music</h5>
+					<p class="card-text">Dj</p>
+					<a th:href="@{/music}" class="btn btn-primary">View</a>
+				</div>
+			</div>
+			
+			<div class="col-3 card m-2">
+				<div class="card-body">
+					<h5 class="card-title">TODO</h5>
+					<p class="card-text">Checklist</p>
+					<a th:href="@{/checklist}" class="btn btn-primary">View</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

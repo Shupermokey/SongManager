@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Checklist</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<div class="container">
+		<div
+			class="row mt-3 text-center border border-dark justify-content-center align-items-center">
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/}">Home</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/}">Middle</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" th:href="@{/logout}">Logout</a>
+			</div>
+		</div>
+
+	</div>
+	<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
