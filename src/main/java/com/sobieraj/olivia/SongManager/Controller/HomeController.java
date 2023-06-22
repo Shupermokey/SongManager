@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.sobieraj.olivia.SongManager.Entity.Photo;
 import com.sobieraj.olivia.SongManager.Repo.PhotoRepo;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
 	
@@ -18,24 +21,19 @@ public class HomeController {
 	PhotoRepo pRepo;
 	
 	@GetMapping("/")
-	public String homePage() {
+	public String homePage(HttpServletRequest http) {
+		HttpSession session = http.getSession();
+		session.invalidate();
 		return "homePage";
 	}
 	
-	@PostMapping("/login")
-	public String loginPage() {
-		return "loggedIn";
-	}
+
 	
 	@PostMapping("/logout")
 	public String loggedOut() {
 		return "homePage";
 	}
 	
-	@GetMapping("/signUp")
-	public String signUp() {
-		return "signUp";
-	}
 	
 	@GetMapping("/photos")
 	public String photoPage(Model m) {

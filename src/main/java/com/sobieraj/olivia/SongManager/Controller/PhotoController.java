@@ -29,7 +29,7 @@ public class PhotoController {
 	
 	@PostMapping("/addPhoto")
 	public String addPhoto(@RequestParam("image") MultipartFile image) {
-
+		
 		if(!image.isEmpty()) {
 			
 			try {
