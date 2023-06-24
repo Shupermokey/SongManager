@@ -11,17 +11,18 @@
 	
 	<div id="loginCard" class = "row d-flex justify-content-center  ">
 	<h5 th:text = "${session.accountSignedUp}"></h5>
+	<h5 th:text = "${session.wrongUserPass}"></h5>
 			<div class="d-flex justify-content-center align-items-center">
 				<h1>Login</h1>
 			</div>
  			<form  th:action="@{/login}" method="post" class="row d-flex justify-content-center align-items-center ">
 				<div class="form-floating ">
  					<input class = "row text-center m-2 form-control" id="username" name="username" placeholder="Username">
-					<label class="text-center m-2" for="username">Email address</label>
+					<label class="text-center m-2" for="username">Username</label>
 					</div>
 					
 				<div class="form-floating">
- 					<input class = "row text-center m-2 form-control" id="password" name="password" placeholder="Password">
+ 					<input class = "row text-center m-2 form-control" type="password" id="password" name="password" placeholder="Password">
 					<label class="text-center m-2 " for="password">Password</label>
 					</div>
  				<div class ="row m-2">

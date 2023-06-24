@@ -51,7 +51,7 @@ public class PhotoController {
 	
 	
 	//ChatGPT code that I need to study
-	@GetMapping("/photoss/{id}")
+	@GetMapping("/photos/{id}")
 	@ResponseBody
 	public ResponseEntity<byte[]> getImage(@PathVariable("id") Long id) {
 	    Optional<Photo> photoOptional = pRepo.findById(id);

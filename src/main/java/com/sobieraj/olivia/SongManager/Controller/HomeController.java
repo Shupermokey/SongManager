@@ -27,10 +27,10 @@ public class HomeController {
 		return "homePage";
 	}
 	
-
-	
-	@PostMapping("/logout")
-	public String loggedOut() {
+	@GetMapping("/logout")
+	public String loggedOut(HttpServletRequest http) {
+		HttpSession session = http.getSession();
+		session.invalidate();
 		return "homePage";
 	}
 	

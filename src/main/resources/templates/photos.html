@@ -24,7 +24,7 @@
 
 		<h1>Photos</h1>
 		<div class = "d-flex flex-row flex-wrap ">
-			<img class="m-2" style="width:300px; height:200px;" th:each="photo : ${photos}" th:src="@{'/photoss/' + ${photo.id}}" alt="Photo">
+			<img class="m-2" style="width:300px; height:200px;" th:each="photo : ${photos}" th:src="@{'/photos/' + ${photo.id}}" alt="Photo">
 		</div>
 
 			
