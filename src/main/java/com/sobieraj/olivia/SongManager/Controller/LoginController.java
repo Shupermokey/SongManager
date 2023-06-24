@@ -39,8 +39,8 @@ public class LoginController {
 	@PostMapping("/login")
 	public String loginPage(HttpServletRequest http, Account account) {
 		HttpSession session = http.getSession();
-		
-		if(accountService.accountPassCheck(account)){
+		Account logAccount = aRepo.findAccountByUsername(account.getUsername());
+		if(accountService.accountPassCheck(account) && logAccount.isEnabled()){
 		
 			session.setAttribute("user", account.getUsername());
 			return "loggedIn";
