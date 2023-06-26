@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Message {
 
-	private String message;
-	private String sender;
 	private MessageType type;
+    private String content;
+    private String sender;
 	
 }
