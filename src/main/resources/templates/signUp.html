@@ -13,7 +13,7 @@
 			<div class="d-flex justify-content-center align-items-center">
 				<h1>Signup</h1>
 			</div>
- 			<form  th:action="@{/accountSignup}" method="post" class="row d-flex justify-content-center align-items-center ">
+ 			<form  th:action="@{/accountSignup}" method="post" class="row d-flex justify-content-center align-items-center " th:object="${account}">
 				<div class="form-floating ">
  					<input class = "row text-center m-2 form-control" id="username" name="username" placeholder="Username">
 					<label class="text-center m-2" for="username">Username</label>
