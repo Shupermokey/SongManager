@@ -3,12 +3,15 @@ package com.sobieraj.olivia.SongManager.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.sobieraj.olivia.SongManager.Entity.Account;
 import com.sobieraj.olivia.SongManager.Entity.ConfirmationToken;
 import com.sobieraj.olivia.SongManager.Repo.AccountRepo;
 import com.sobieraj.olivia.SongManager.Repo.TokenRepo;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 public class AccountService {
@@ -21,6 +24,9 @@ public class AccountService {
 	
 	@Autowired
 	EmailService eService;
+	
+	@Autowired
+	PasswordEncoder encoder;
 	
 	public boolean accountExists(Account account) {
 		
@@ -56,6 +62,7 @@ public class AccountService {
 			return false;
 		    
 		}
+		accountExist.setPassword(encoder.encode(accountExist.getPassword()));
 		aRepo.save(account);
 
 
